@@ -61,8 +61,12 @@ nav {
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .logo span { color: var(--purple-bright); }
+.logo-icon { height: 56px; width: auto; }
 .navlinks { display: flex; gap: 24px; font-family: var(--mono); font-size: 0.85rem; color: var(--text-dim); }
 .navlinks a:hover { color: var(--text); }
 
