@@ -39,3 +39,18 @@ fetch('follow-counts.json')
   .catch(() => {
     document.querySelectorAll('[data-count-source^="static:"]').forEach((el) => el.remove());
   });
+
+(async () => {
+  const btn = document.getElementById('live-btn');
+  if (!btn) return;
+  try {
+    const res = await fetch('https://decapi.me/twitch/uptime/tinkes_');
+    const uptime = (await res.text()).trim();
+    if (!/offline/i.test(uptime)) {
+      btn.classList.add('is-live');
+      btn.textContent = `🔴 LIVE nyt · ${uptime}`;
+    }
+  } catch {
+    // keep the default "Seuraa striimejä" label
+  }
+})();
