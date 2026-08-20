@@ -217,8 +217,15 @@ h2 {
 .link-card:hover { border-color: var(--purple-bright); background: var(--bg-alt); }
 .link-card .icon { font-size: 1.4rem; width: 36px; text-align: center; }
 .link-card .icon-img { height: 28px; width: 28px; object-fit: contain; flex-shrink: 0; }
-.link-card .meta strong { display: block; font-size: 0.95rem; }
-.link-card .meta span { display: block; font-size: 0.8rem; color: var(--text-dim); font-family: var(--mono); }
+.link-card .meta { flex: 1 1 auto; min-width: 0; }
+.link-card .meta strong { display: block; font-size: 0.95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.link-card .meta span { display: block; font-size: 0.8rem; color: var(--text-dim); font-family: var(--mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.link-card .count {
+  margin-top: 2px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--green);
+}
 
 footer {
   border-top: 1px solid var(--border);
