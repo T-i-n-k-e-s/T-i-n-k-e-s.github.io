@@ -72,7 +72,7 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 82vh;
+  min-height: 58vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
