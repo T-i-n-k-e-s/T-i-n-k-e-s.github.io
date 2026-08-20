@@ -185,6 +185,7 @@ h2 {
 }
 .card:hover { border-color: var(--purple); transform: translateY(-3px); }
 .card .icon { font-size: 1.6rem; }
+.card .icon-img { height: 28px; width: 28px; object-fit: contain; align-self: flex-start; }
 .card h3 { font-family: var(--mono); font-size: 1.05rem; }
 .card p { color: var(--text-dim); font-size: 0.92rem; flex-grow: 1; }
 .card .tag {
@@ -215,6 +216,7 @@ h2 {
 }
 .link-card:hover { border-color: var(--purple-bright); background: var(--bg-alt); }
 .link-card .icon { font-size: 1.4rem; width: 36px; text-align: center; }
+.link-card .icon-img { height: 28px; width: 28px; object-fit: contain; flex-shrink: 0; }
 .link-card .meta strong { display: block; font-size: 0.95rem; }
 .link-card .meta span { display: block; font-size: 0.8rem; color: var(--text-dim); font-family: var(--mono); }
 
