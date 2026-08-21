@@ -32,7 +32,7 @@ body::before {
   inset: 0;
   background:
     radial-gradient(circle at 15% 10%, rgba(145,70,255,0.16), transparent 45%),
-    radial-gradient(circle at 85% 30%, rgba(255,77,141,0.10), transparent 40%);
+    radial-gradient(circle at 85% 30%, rgba(61,220,132,0.10), transparent 40%);
   pointer-events: none;
   z-index: 0;
 }
