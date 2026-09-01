@@ -48,7 +48,7 @@ fetch('follow-counts.json')
     const uptime = (await res.text()).trim();
     if (!/offline/i.test(uptime)) {
       btn.classList.add('is-live');
-      btn.textContent = `🔴 LIVE nyt · ${uptime}`;
+      btn.textContent = `LIVE nyt · ${uptime}`;
     }
   } catch {
     // keep the default "Seuraa striimejä" label
