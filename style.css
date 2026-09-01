@@ -82,8 +82,47 @@ nav {
 }
 .logo span { color: var(--purple-bright); }
 .logo-icon { height: 56px; width: auto; }
+.nav-right { display: flex; align-items: center; gap: 20px; }
 .navlinks { display: flex; gap: 24px; font-family: var(--mono); font-size: 0.85rem; color: var(--text-dim); }
 .navlinks a:hover { color: var(--text); }
+.lang-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.lang-switch:hover { border-color: var(--purple-bright); }
+.lang-switch .lang-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 30px;
+  height: calc(100% - 6px);
+  background: var(--purple);
+  border-radius: 999px;
+  transition: transform 0.2s ease;
+  z-index: 0;
+}
+.lang-switch.is-en .lang-thumb { transform: translateX(30px); }
+.lang-switch .lang-opt {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+}
+.lang-switch:not(.is-en) .lang-fi { color: #fff; }
+.lang-switch.is-en .lang-en { color: #fff; }
 
 /* PROFILE PANEL */
 .profile-panel {
@@ -232,6 +271,9 @@ nav {
 .tile > p { color: var(--text-dim); margin-bottom: 16px; font-size: 1.02rem; }
 .tile > p:last-child { margin-bottom: 0; }
 .tile > p strong { color: var(--text); }
+
+.tile-head { font-family: var(--display); font-weight: 700; font-size: 0.95rem; margin-bottom: 14px; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .stat-card {
   background: var(--card);

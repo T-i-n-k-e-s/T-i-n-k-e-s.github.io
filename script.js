@@ -1,8 +1,45 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const LANG_KEY = 'tinkes-lang';
+let currentLang = localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'fi';
+
+function renderCount(el) {
+  const n = Number(el.dataset.count);
+  if (!Number.isFinite(n)) return;
+  const label = currentLang === 'en' ? 'followers' : 'seuraajaa';
+  el.textContent = `${n.toLocaleString(currentLang === 'en' ? 'en-US' : 'fi-FI')} ${label}`;
+}
+
+function renderLiveBtn() {
+  const btn = document.getElementById('live-btn');
+  if (!btn || btn.dataset.live !== 'true') return;
+  const label = currentLang === 'en' ? 'LIVE now' : 'LIVE nyt';
+  btn.textContent = `${label} · ${btn.dataset.uptime}`;
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach((el) => {
+    if (el.dataset.fi === undefined) el.dataset.fi = el.innerHTML;
+    el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.fi;
+  });
+  document.querySelectorAll('[data-count-source]').forEach(renderCount);
+  renderLiveBtn();
+  document.getElementById('lang-switch')?.classList.toggle('is-en', lang === 'en');
+  localStorage.setItem(LANG_KEY, lang);
+}
+
+document.getElementById('lang-switch')?.addEventListener('click', () => {
+  applyLang(currentLang === 'fi' ? 'en' : 'fi');
+});
+
+applyLang(currentLang);
+
 function showCount(el, count) {
   if (Number.isFinite(count)) {
-    el.textContent = `${count.toLocaleString('fi-FI')} seuraajaa`;
+    el.dataset.count = count;
+    renderCount(el);
   } else {
     el.remove();
   }
@@ -48,9 +85,11 @@ fetch('follow-counts.json')
     const uptime = (await res.text()).trim();
     if (!/offline/i.test(uptime)) {
       btn.classList.add('is-live');
-      btn.textContent = `LIVE nyt · ${uptime}`;
+      btn.dataset.live = 'true';
+      btn.dataset.uptime = uptime;
+      renderLiveBtn();
     }
   } catch {
-    // keep the default "Seuraa striimejä" label
+    // keep the default "Seuraa striimejä" / "Follow my streams" label
   }
 })();

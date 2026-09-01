@@ -16,10 +16,18 @@
 <header>
   <nav>
     <div class="logo"><img src="Icon.png" alt="Tinkes-logo" class="logo-icon">Tinkes<span>@</span>web</div>
-    <div class="navlinks">
-      <a href="#about">Profiili</a>
-      <a href="#projects">Tekemiset</a>
-      <a href="#links">Somet</a>
+    <div class="nav-right">
+      <div class="navlinks">
+        <a href="#about" data-en="Profile">Profiili</a>
+        <a href="#skills" data-en="Skills">Osaaminen</a>
+        <a href="#projects" data-en="Projects">Tekemiset</a>
+        <a href="#links" data-en="Links">Somet</a>
+      </div>
+      <button id="lang-switch" class="lang-switch" type="button" aria-label="Kieli / Language">
+        <span class="lang-thumb"></span>
+        <span class="lang-opt lang-fi">FI</span>
+        <span class="lang-opt lang-en">EN</span>
+      </button>
     </div>
   </nav>
 </header>
@@ -28,67 +36,100 @@
   <section class="profile-panel">
     <img class="avatar" src="Icon.png" alt="Tinkes-logo">
     <div class="profile-main">
-      <div class="eyebrow"><span class="dot"></span>dev &amp; striimaaja Pirkanmaalta</div>
+      <div class="eyebrow"><span class="dot"></span><span data-en="dev &amp; streamer from Pirkanmaa">dev &amp; striimaaja Pirkanmaalta</span></div>
       <h1 class="wordmark">TINKES<span class="mark"></span></h1>
-      <p class="tagline">
+      <p class="tagline" data-en="18-year-old &lt;strong&gt;software development student&lt;/strong&gt;. I stream when I have the time and energy, and also make YouTube videos sometimes. No quality guaranteed. The &quot;artist&quot; title is mostly a joke.">
         18-vuotias <strong>ohjelmistokehityksen opiskelija</strong>.
         Striimaan silloin kun jaksaa ja ehtii, teen videoita myös YouTubeen. Laatua ei luvata.
         "Taiteilija"-titteli on lähinnä vitsi.
       </p>
       <div class="stat-chips">
-        <span class="chip">18v</span>
+        <span class="chip" data-en="18y">18v</span>
         <span class="chip">Pirkanmaa</span>
-        <span class="chip">Ohjelmistokehitys</span>
+        <span class="chip" data-en="Software Development">Ohjelmistokehitys</span>
       </div>
       <div class="cta-row">
-        <a class="btn btn-primary" id="live-btn" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener">Seuraa striimejä</a>
-        <a class="btn btn-ghost" href="#projects">Tekemiset ↓</a>
+        <a class="btn btn-primary" id="live-btn" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener" data-en="Follow my streams">Seuraa striimejä</a>
+        <a class="btn btn-ghost" href="#projects" data-en="Projects ↓">Tekemiset ↓</a>
       </div>
     </div>
   </section>
 
   <div class="bento">
-    <div class="bento-label" id="about">Profiili</div>
+    <div class="bento-label" id="about" data-en="Profile">Profiili</div>
     <div class="tile span-3">
-      <p>Moro, oon <strong>Rasmus</strong> tai Tinkes, kumpi vaan käy. Opiskelen ohjelmistokehitystä kaksoistutkintolaisena, eli koodailu ja lukio yhtä aikaa.</p>
-      <p>Vapaa-ajalla pelaan ja striimailen Twitchissä, ja väännän YouTubeen välillä random sälää.</p>
-      <p>Tää sivu on vielä työn alla, ihan niinku moni muukin projekti, mutta täältä löydät ainakin missä mut bongaa.</p>
+      <p data-en="Hey, I'm &lt;strong&gt;Rasmus&lt;/strong&gt;, or Tinkes, whichever works. I'm studying software development as a dual-degree student, so coding and high school at the same time.">Moro, oon <strong>Rasmus</strong> tai Tinkes, kumpi vaan käy. Opiskelen ohjelmistokehitystä kaksoistutkintolaisena, eli koodailu ja lukio yhtä aikaa.</p>
+      <p data-en="In my free time I play games and stream on Twitch, and sometimes make random stuff for YouTube.">Vapaa-ajalla pelaan ja striimailen Twitchissä, ja väännän YouTubeen välillä random sälää.</p>
+      <p data-en="This site is still a work in progress, like a lot of my other projects, but at least you'll find where to catch me here.">Tää sivu on vielä työn alla, ihan niinku moni muukin projekti, mutta täältä löydät ainakin missä mut bongaa.</p>
     </div>
     <div class="tile span-3 stat-card">
-      <div class="stat-card-head">Tiedot</div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label">Ikä</span><span class="stat-val">18</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label">Sijainti</span><span class="stat-val">Pirkanmaa, FI</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label">Opinnot</span><span class="stat-val">Ohjelmistokehitys (kaksoistutkinto)</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label">Harrastukset</span><span class="stat-val">striimaus, videot, pelit, taide</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label">Suosikkipeli</span><span class="stat-val">Brawlhalla</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label">Organisaatio</span><span class="stat-val">Tinkes Productions</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label">Sivun Status</span><span class="stat-val">Jatkuu...</span></div>
+      <div class="stat-card-head" data-en="Info">Tiedot</div>
+      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Age">Ikä</span><span class="stat-val">18</span></div>
+      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Location">Sijainti</span><span class="stat-val">Pirkanmaa, FI</span></div>
+      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Studies">Opinnot</span><span class="stat-val" data-en="Software Development (dual-degree)">Ohjelmistokehitys (kaksoistutkinto)</span></div>
+      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Hobbies">Harrastukset</span><span class="stat-val" data-en="streaming, videos, games, art">striimaus, videot, pelit, taide</span></div>
+      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Favorite game">Suosikkipeli</span><span class="stat-val">Brawlhalla</span></div>
+      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Organization">Organisaatio</span><span class="stat-val">Tinkes Productions</span></div>
+      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Site status">Sivun Status</span><span class="stat-val" data-en="Ongoing...">Jatkuu...</span></div>
     </div>
 
-    <div class="bento-label" id="projects">Tekemiset</div>
+    <div class="bento-label" id="skills" data-en="Skills">Osaaminen</div>
+    <div class="tile span-3">
+      <h3 class="tile-head" data-en="Languages">Kielet</h3>
+      <div class="tag-list">
+        <span class="chip">Python</span>
+        <span class="chip">C#</span>
+        <span class="chip">C</span>
+        <span class="chip">C++</span>
+        <span class="chip">Java</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Node.js</span>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+      </div>
+    </div>
+    <div class="tile span-3">
+      <h3 class="tile-head" data-en="Tools">Työkalut</h3>
+      <div class="tag-list">
+        <span class="chip">Visual Studio Code</span>
+        <span class="chip">Visual Studio 2022</span>
+        <span class="chip">Git</span>
+        <span class="chip">Unity</span>
+        <span class="chip">Unreal</span>
+        <span class="chip">DaVinci Resolve</span>
+        <span class="chip">OBS</span>
+        <span class="chip">Blender</span>
+        <span class="chip">Photoshop</span>
+        <span class="chip">Krita</span>
+        <span class="chip">GIMP</span>
+        <span class="chip">Microsoft 365</span>
+      </div>
+    </div>
+
+    <div class="bento-label" id="projects" data-en="Projects">Tekemiset</div>
     <div class="tile span-2 card brand-youtube">
       <img class="icon-img" src="Sosiaalinenmedia%20Icons/youtube.png" alt="YouTube">
       <span class="tag">YouTube</span>
       <h3>YouTube</h3>
-      <p>Sarja "paska montage" -videoita Brawlhallasta. Ei lupauksia laadusta, mutta sydämellä tehty.</p>
-      <a class="link-out" href="https://www.youtube.com/@_tinkes_" target="_blank" rel="noopener">katso kanava →</a>
+      <p data-en="A series of &quot;crappy montage&quot; videos from Brawlhalla. No quality guarantees, but made with heart.">Sarja "paska montage" -videoita Brawlhallasta. Ei lupauksia laadusta, mutta sydämellä tehty.</p>
+      <a class="link-out" href="https://www.youtube.com/@_tinkes_" target="_blank" rel="noopener" data-en="watch channel →">katso kanava →</a>
     </div>
     <div class="tile span-2 card brand-twitch">
       <img class="icon-img" src="Sosiaalinenmedia%20Icons/twitch.png" alt="Twitch">
       <span class="tag">Twitch</span>
-      <h3>Live-striimit</h3>
-      <p>Satunnaisia striimejä silloin kun aikaa ja jaksamista löytyy. Tuu kattoon ja jää juttelee chattiin.</p>
+      <h3 data-en="Live streams">Live-striimit</h3>
+      <p data-en="Random streams whenever I have time and energy. Come watch and hang out in chat.">Satunnaisia striimejä silloin kun aikaa ja jaksamista löytyy. Tuu kattoon ja jää juttelee chattiin.</p>
       <a class="link-out" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener">tinkes_ →</a>
     </div>
     <div class="tile span-2 card brand-github">
       <img class="icon-img" src="Sosiaalinenmedia%20Icons/github.png" alt="GitHub">
-      <span class="tag soon">tulossa</span>
-      <h3>Koodiprojektit</h3>
-      <p>Opinnot on käynnissä ja ensimmäiset omat projektit tulossa GitHubiin. Tsekkaa myöhemmin uudestaan.</p>
-      <a class="link-out" href="https://github.com/T-i-n-k-e-s" target="_blank" rel="noopener">GitHub-profiili →</a>
+      <span class="tag soon" data-en="coming soon">tulossa</span>
+      <h3 data-en="Code projects">Koodiprojektit</h3>
+      <p data-en="Still studying, so first personal projects are coming to GitHub soon. Check back later.">Opinnot on käynnissä ja ensimmäiset omat projektit tulossa GitHubiin. Tsekkaa myöhemmin uudestaan.</p>
+      <a class="link-out" href="https://github.com/T-i-n-k-e-s" target="_blank" rel="noopener" data-en="GitHub profile →">GitHub-profiili →</a>
     </div>
 
-    <div class="bento-label" id="links">Somet</div>
+    <div class="bento-label" id="links" data-en="Links">Somet</div>
     <a class="tile span-2 link-card brand-youtube" href="https://www.youtube.com/@_tinkes_" target="_blank" rel="noopener">
       <img class="icon-img" src="Sosiaalinenmedia%20Icons/youtube.png" alt="YouTube">
       <div class="meta">
@@ -120,7 +161,7 @@
     <a class="tile span-3 link-card brand-tinkes" href="https://github.com/Tinkes-Productions" target="_blank" rel="noopener">
       <img class="icon-img" src="Sosiaalinenmedia%20Icons/tinkes-productions.png" alt="Tinkes Productions">
       <div class="meta">
-        <strong>Tinkes Productions</strong><span>GitHub-organisaatio</span>
+        <strong>Tinkes Productions</strong><span data-en="GitHub organization">GitHub-organisaatio</span>
         <span class="count" data-count-source="github:Tinkes-Productions">···</span>
       </div>
     </a>
