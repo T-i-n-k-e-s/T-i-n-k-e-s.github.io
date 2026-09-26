@@ -1,178 +1,124 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tinkes</title>
-<meta name="description" content="Tinkes — ohjelmistokehityksen opiskelija Pirkanmaalta.">
-<link rel="icon" href="Icon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tinkes</title>
+  <meta name="description" content="Moro, oon Tinkes. Täältä löytyy mun videot, striimit ja projektit.">
+  <link rel="icon" href="Icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <nav>
-    <div class="logo"><img src="Icon.png" alt="Tinkes-logo" class="logo-icon">Tinkes<span>@</span>web</div>
-    <div class="nav-right">
-      <div class="navlinks">
-        <a href="#about" data-en="Profile">Profiili</a>
-        <a href="#skills" data-en="Skills">Osaaminen</a>
-        <a href="#projects" data-en="Projects">Tekemiset</a>
-        <a href="#links" data-en="Links">Somet</a>
-      </div>
-      <button id="lang-switch" class="lang-switch" type="button" aria-label="Kieli / Language">
-        <span class="lang-thumb"></span>
-        <span class="lang-opt lang-fi">FI</span>
-        <span class="lang-opt lang-en">EN</span>
-      </button>
-    </div>
-  </nav>
-</header>
+  <!-- käsin piirretty viiva -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="1" seed="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"/>
+    </filter>
+  </svg>
 
-<div class="wrap">
-  <section class="profile-panel">
-    <img class="avatar" src="Icon.png" alt="Tinkes-logo">
-    <div class="profile-main">
-      <div class="eyebrow"><span class="dot"></span><span data-en="dev &amp; streamer from Pirkanmaa">dev &amp; striimaaja Pirkanmaalta</span></div>
-      <h1 class="wordmark">TINKES<span class="mark"></span></h1>
-      <p class="tagline" data-en="18-year-old &lt;strong&gt;software development student&lt;/strong&gt;. I stream when I have the time and energy, and also make YouTube videos sometimes. No quality guaranteed. The &quot;artist&quot; title is mostly a joke.">
-        18-vuotias <strong>ohjelmistokehityksen opiskelija</strong>.
-        Striimaan silloin kun jaksaa ja ehtii, teen videoita myös YouTubeen. Laatua ei luvata.
-        "Taiteilija"-titteli on lähinnä vitsi.
-      </p>
-      <div class="stat-chips">
-        <span class="chip" data-en="18y">18v</span>
-        <span class="chip">Pirkanmaa</span>
-        <span class="chip" data-en="Software Development">Ohjelmistokehitys</span>
+  <div class="topbar" id="topbar">
+    <nav class="topnav wrap">
+      <a href="index.html" class="topnav-name"><img src="Icon.png" alt="" width="34" height="34">tinkes.fi</a>
+      <div class="topnav-links">
+        <a href="videot.html" data-en="Videos and streams">Videot ja striimit</a>
+        <a href="#projektit" data-en="Projects">Projektit</a>
+        <a href="#linkit" data-en="Links">Linkit</a>
+        <a class="nav-live" id="navLive" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener" hidden data-en="Live now">Live nyt</a>
+        <span class="lang" role="group" aria-label="Kieli">
+          <button type="button" data-lang="fi" aria-pressed="true">FI</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </span>
       </div>
-      <div class="cta-row">
-        <a class="btn btn-primary" id="live-btn" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener" data-en="Follow my streams">Seuraa striimejä</a>
-        <a class="btn btn-ghost" href="#projects" data-en="Projects ↓">Tekemiset ↓</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="bento">
-    <div class="bento-label" id="about" data-en="Profile">Profiili</div>
-    <div class="tile span-3">
-      <p data-en="Hey, I'm &lt;strong&gt;Rasmus&lt;/strong&gt;, or Tinkes, whichever works. I'm studying software development as a dual-degree student, so coding and high school at the same time.">Moro, oon <strong>Rasmus</strong> tai Tinkes, kumpi vaan käy. Opiskelen ohjelmistokehitystä kaksoistutkintolaisena, eli koodailu ja lukio yhtä aikaa.</p>
-      <p data-en="In my free time I play games and stream on Twitch, and sometimes make random stuff for YouTube.">Vapaa-ajalla pelaan ja striimailen Twitchissä, ja väännän YouTubeen välillä random sälää.</p>
-      <p data-en="This site is still a work in progress, like a lot of my other projects, but at least you'll find where to catch me here.">Tää sivu on vielä työn alla, ihan niinku moni muukin projekti, mutta täältä löydät ainakin missä mut bongaa.</p>
-    </div>
-    <div class="tile span-3 stat-card">
-      <div class="stat-card-head" data-en="Info">Tiedot</div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Age">Ikä</span><span class="stat-val">18</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Location">Sijainti</span><span class="stat-val">Pirkanmaa, FI</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Studies">Opinnot</span><span class="stat-val" data-en="Software Development (dual-degree)">Ohjelmistokehitys (kaksoistutkinto)</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Hobbies">Harrastukset</span><span class="stat-val" data-en="streaming, videos, games, art">striimaus, videot, pelit, taide</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Favorite game">Suosikkipeli</span><span class="stat-val">Brawlhalla</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Organization">Organisaatio</span><span class="stat-val">Tinkes Productions</span></div>
-      <div class="stat-row"><span class="stat-icon"></span><span class="stat-label" data-en="Site status">Sivun Status</span><span class="stat-val" data-en="Ongoing...">Jatkuu...</span></div>
-    </div>
-
-    <div class="bento-label" id="skills" data-en="Skills">Osaaminen</div>
-    <div class="tile span-3">
-      <h3 class="tile-head" data-en="Languages">Kielet</h3>
-      <div class="tag-list">
-        <span class="chip">Python</span>
-        <span class="chip">C#</span>
-        <span class="chip">C</span>
-        <span class="chip">C++</span>
-        <span class="chip">Java</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">Node.js</span>
-        <span class="chip">HTML</span>
-        <span class="chip">CSS</span>
-      </div>
-    </div>
-    <div class="tile span-3">
-      <h3 class="tile-head" data-en="Tools">Työkalut</h3>
-      <div class="tag-list">
-        <span class="chip">Visual Studio Code</span>
-        <span class="chip">Visual Studio 2022</span>
-        <span class="chip">Git</span>
-        <span class="chip">Unity</span>
-        <span class="chip">Unreal</span>
-        <span class="chip">DaVinci Resolve</span>
-        <span class="chip">OBS</span>
-        <span class="chip">Blender</span>
-        <span class="chip">Photoshop</span>
-        <span class="chip">Krita</span>
-        <span class="chip">GIMP</span>
-        <span class="chip">Microsoft 365</span>
-      </div>
-    </div>
-
-    <div class="bento-label" id="projects" data-en="Projects">Tekemiset</div>
-    <div class="tile span-2 card brand-youtube">
-      <img class="icon-img" src="Sosiaalinenmedia%20Icons/youtube.png" alt="YouTube">
-      <span class="tag">YouTube</span>
-      <h3>YouTube</h3>
-      <p data-en="A series of &quot;crappy montage&quot; videos from Brawlhalla. No quality guarantees, but made with heart.">Sarja "paska montage" -videoita Brawlhallasta. Ei lupauksia laadusta, mutta sydämellä tehty.</p>
-      <a class="link-out" href="https://www.youtube.com/@_tinkes_" target="_blank" rel="noopener" data-en="watch channel →">katso kanava →</a>
-    </div>
-    <div class="tile span-2 card brand-twitch">
-      <img class="icon-img" src="Sosiaalinenmedia%20Icons/twitch.png" alt="Twitch">
-      <span class="tag">Twitch</span>
-      <h3 data-en="Live streams">Live-striimit</h3>
-      <p data-en="Random streams whenever I have time and energy. Come watch and hang out in chat.">Satunnaisia striimejä silloin kun aikaa ja jaksamista löytyy. Tuu kattoon ja jää juttelee chattiin.</p>
-      <a class="link-out" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener">tinkes_ →</a>
-    </div>
-    <div class="tile span-2 card brand-github">
-      <img class="icon-img" src="Sosiaalinenmedia%20Icons/github.png" alt="GitHub">
-      <span class="tag soon" data-en="coming soon">tulossa</span>
-      <h3 data-en="Code projects">Koodiprojektit</h3>
-      <p data-en="Still studying, so first personal projects are coming to GitHub soon. Check back later.">Opinnot on käynnissä ja ensimmäiset omat projektit tulossa GitHubiin. Tsekkaa myöhemmin uudestaan.</p>
-      <a class="link-out" href="https://github.com/T-i-n-k-e-s" target="_blank" rel="noopener" data-en="GitHub profile →">GitHub-profiili →</a>
-    </div>
-
-    <div class="bento-label" id="links" data-en="Links">Somet</div>
-    <a class="tile span-2 link-card brand-youtube" href="https://www.youtube.com/@_tinkes_" target="_blank" rel="noopener">
-      <img class="icon-img" src="Sosiaalinenmedia%20Icons/youtube.png" alt="YouTube">
-      <div class="meta">
-        <strong>YouTube</strong><span>@_tinkes_</span>
-        <span class="count" data-count-source="static:youtube">···</span>
-      </div>
-    </a>
-    <a class="tile span-2 link-card brand-twitch" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener">
-      <img class="icon-img" src="Sosiaalinenmedia%20Icons/twitch.png" alt="Twitch">
-      <div class="meta">
-        <strong>Twitch</strong><span>tinkes_</span>
-        <span class="count" data-count-source="twitch:tinkes_">···</span>
-      </div>
-    </a>
-    <a class="tile span-2 link-card brand-instagram" href="https://www.instagram.com/_tinkes_/" target="_blank" rel="noopener">
-      <img class="icon-img" src="Sosiaalinenmedia%20Icons/instagram.png" alt="Instagram">
-      <div class="meta">
-        <strong>Instagram</strong><span>@_tinkes_</span>
-        <span class="count" data-count-source="static:instagram">···</span>
-      </div>
-    </a>
-    <a class="tile span-3 link-card brand-github" href="https://github.com/T-i-n-k-e-s" target="_blank" rel="noopener">
-      <img class="icon-img" src="Sosiaalinenmedia%20Icons/github.png" alt="GitHub">
-      <div class="meta">
-        <strong>GitHub</strong><span>T-i-n-k-e-s</span>
-        <span class="count" data-count-source="github:T-i-n-k-e-s">···</span>
-      </div>
-    </a>
-    <a class="tile span-3 link-card brand-tinkes" href="https://github.com/Tinkes-Productions" target="_blank" rel="noopener">
-      <img class="icon-img" src="Sosiaalinenmedia%20Icons/tinkes-productions.png" alt="Tinkes Productions">
-      <div class="meta">
-        <strong>Tinkes Productions</strong><span data-en="GitHub organization">GitHub-organisaatio</span>
-        <span class="count" data-count-source="github:Tinkes-Productions">···</span>
-      </div>
-    </a>
+    </nav>
   </div>
-</div>
 
-<footer>
-  © <span id="year"></span> Tinkes
-</footer>
+  <header class="hero">
 
-<script src="script.js"></script>
+    <div class="hero-inner wrap">
+      <figure class="hero-logo-wrap">
+        <img class="hero-logo" src="Icon.png" alt="Tinkes logo" width="200" height="200" onerror="this.onerror=null;this.src='https://tinkes.fi/Icon.png'">
+        <span class="doodle doodle-sparks" aria-hidden="true"></span>
+      </figure>
+      <div class="hero-text">
+        <h1>Tinkes</h1>
+        <p class="hero-role" data-en="Rasmus, 18. Software development student, streamer and occasional video maker from Pirkanmaa.">Rasmus, 18. Ohjelmistokehityksen opiskelija, striimaaja ja satunnainen videontekijä Pirkanmaalta.</p>
+        <p class="hero-body" data-en="I study software development as a dual-degree student, so coding and high school at the same time. In my free time I play, stream when I have the energy and put random stuff on YouTube. No quality promised.">Opiskelen ohjelmistokehitystä kaksoistutkintolaisena, eli koodailu ja lukio yhtä aikaa. Vapaa-ajalla pelaan, striimaan kun jaksaa ja väännän YouTubeen random sälää. Laatua ei luvata.</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener"><img src="Sosiaalinenmedia Icons/twitch.png" alt=""><span data-en="Twitch channel">Twitch-kanava</span></a>
+          <a class="btn btn-line" href="videot.html" data-en="Videos and streams">Videot ja striimit</a>
+          <span class="live-status" id="liveStatus"></span>
+        </div>
+      </div>
+    </div>
+  </header>
 
+  <main class="wrap">
+
+    <section id="projektit" class="block">
+      <div class="block-head">
+        <h2 data-en="Projects">Projektit</h2>
+      </div>
+      <ul class="projects">
+        <li class="project">
+          <h3>Ropobot</h3>
+          <p data-en="A mod for R.E.P.O., made together with Sinerla Development.">R.E.P.O.-peliin tehtävä modi, yhdessä Sinerla Developmentin kanssa.</p>
+          <span class="status note note-purple arrow" data-en="in progress">työn alla</span>
+        </li>
+        <li class="project">
+          <h3>Paska Montage</h3>
+          <p data-en="Brawlhalla montage series on YouTube, one legend per video.">Brawlhalla-montagesarja YouTubessa, yks legenda per video.</p>
+          <span class="status note arrow" data-en="still going, sorry">jatkuu, sori</span>
+        </li>
+        <li class="project">
+          <h3>Tinkes Productions</h3>
+          <p data-en="GitHub organization for my game projects. Most repos are still private.">GitHub-organisaatio peliprojekteille. Suurin osa repoista on vielä yksityisiä.</p>
+          <a class="status" href="https://github.com/Tinkes-Productions" target="_blank" rel="noopener">GitHub</a>
+        </li>
+        <li class="project">
+          <h3>tinkes.fi</h3>
+          <p data-en="This site. Hand-written HTML, CSS and JavaScript on GitHub Pages. A work in progress, like a lot of my projects.">Tää sivu. Käsin kirjoitettua HTML:ää, CSS:ää ja JavaScriptiä GitHub Pagesissa. Työn alla, niinku moni muukin projekti.</p>
+          <a class="status" href="https://github.com/T-i-n-k-e-s/T-i-n-k-e-s.github.io" target="_blank" rel="noopener" data-en="Source">Lähdekoodi</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block split">
+      <div>
+        <div class="block-head"><h2 data-en="Tools">Työkalut</h2></div>
+        <dl class="skills">
+          <div><dt data-en="Languages">Kielet</dt><dd>Python, C#, C, C++, Java, JavaScript, Node.js, HTML, CSS</dd></div>
+          <div><dt data-en="Game engines">Pelimoottorit</dt><dd>Unity, Unreal</dd></div>
+          <div><dt data-en="Video and art">Video ja kuvat</dt><dd>DaVinci Resolve, OBS, Blender, Photoshop, Krita, GIMP</dd></div>
+          <div><dt data-en="Other">Muut</dt><dd>VS Code, Visual Studio 2022, Git, Microsoft 365</dd></div>
+        </dl>
+      </div>
+
+      <div id="linkit">
+        <div class="block-head"><h2 data-en="Find me">Löydät mut</h2></div>
+        <ul class="links">
+          <li><a class="sketch" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener"><img class="link-icon" src="Sosiaalinenmedia Icons/twitch.png" alt=""><span class="link-name">Twitch</span><span class="link-handle">tinkes_</span><span class="count" data-count-source="twitch:tinkes_"></span></a></li>
+          <li><a class="sketch" href="https://www.youtube.com/@_tinkes_" target="_blank" rel="noopener"><img class="link-icon" src="Sosiaalinenmedia Icons/youtube.png" alt=""><span class="link-name">YouTube</span><span class="link-handle">@_tinkes_</span><span class="count" data-count-source="static:youtube"></span></a></li>
+          <li><a class="sketch" href="https://www.instagram.com/_tinkes_/" target="_blank" rel="noopener"><img class="link-icon" src="Sosiaalinenmedia Icons/instagram.png" alt=""><span class="link-name">Instagram</span><span class="link-handle">@_tinkes_</span><span class="count" data-count-source="static:instagram"></span></a></li>
+          <li><a class="sketch" href="https://github.com/T-i-n-k-e-s" target="_blank" rel="noopener"><img class="link-icon icon-invert" src="Sosiaalinenmedia Icons/github.png" alt=""><span class="link-name">GitHub</span><span class="link-handle">T-i-n-k-e-s</span><span class="count" data-count-source="github:T-i-n-k-e-s"></span></a></li>
+          <li><a class="sketch" href="https://github.com/Tinkes-Productions" target="_blank" rel="noopener"><img class="link-icon" src="Sosiaalinenmedia Icons/tinkes-productions.png" alt=""><span class="link-name">Tinkes Productions</span><span class="link-handle">GitHub org</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <img src="Icon.png" alt="" width="48" height="48" onerror="this.onerror=null;this.src='https://tinkes.fi/Icon.png'">
+      <span>&copy; <span id="year"></span> Tinkes</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

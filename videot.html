@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videot ja striimit - Tinkes</title>
+  <meta name="description" content="Mun striimit ja YouTube-videot samassa paikassa.">
+  <link rel="icon" href="Icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-videos">
+
+  <!-- käsin piirretty viiva -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="1" seed="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"/>
+    </filter>
+  </svg>
+
+  <div class="topbar" id="topbar">
+    <nav class="topnav wrap">
+      <a href="index.html" class="topnav-name"><img src="Icon.png" alt="" width="34" height="34">tinkes.fi</a>
+      <div class="topnav-links">
+        <a href="index.html" data-en="Home">Etusivu</a>
+        <a href="videot.html" aria-current="page" data-en="Videos and streams">Videot ja striimit</a>
+        <a class="nav-live" id="navLive" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener" hidden data-en="Live now">Live nyt</a>
+        <span class="lang" role="group" aria-label="Kieli">
+          <button type="button" data-lang="fi" aria-pressed="true">FI</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </span>
+      </div>
+    </nav>
+  </div>
+
+  <header>
+
+    <div class="page-head wrap">
+      <img src="Icon.png" alt="Tinkes logo" width="120" height="120" onerror="this.onerror=null;this.src='https://tinkes.fi/Icon.png'">
+      <div>
+        <h1 data-en="Videos and streams">Videot ja striimit</h1>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener"><img src="Sosiaalinenmedia Icons/twitch.png" alt=""><span data-en="Follow on Twitch">Seuraa Twitchissä</span></a>
+          <a class="btn btn-line" href="https://www.youtube.com/@_tinkes_?sub_confirmation=1" target="_blank" rel="noopener"><img src="Sosiaalinenmedia Icons/youtube.png" alt=""><span data-en="Subscribe on YouTube">Tilaa YouTubessa</span></a>
+          <span class="live-status" id="liveStatus"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="block" id="striimi">
+      <div class="block-head">
+        <h2 data-en="Stream">Striimi</h2>
+        <span class="note arrow" data-en="when I have the energy">kun jaksaa</span>
+      </div>
+      <div class="stream">
+        <div class="stream-player sketch" id="streamPlayer">
+          <a class="stream-fallback" href="https://www.twitch.tv/tinkes_" target="_blank" rel="noopener" data-en="Watch on Twitch">Katso Twitchissä</a>
+        </div>
+        <div class="stream-chat sketch" id="streamChat"></div>
+      </div>
+    </section>
+
+    <section class="block" id="videot">
+      <div class="block-head">
+        <h2 data-en="Latest videos">Uusimmat videot</h2>
+        <a href="https://www.youtube.com/@_tinkes_/videos" target="_blank" rel="noopener" data-en="All on YouTube">Kaikki YouTubessa</a>
+      </div>
+      <div class="videos" id="videoList"></div>
+    </section>
+
+    <section class="block" id="kaikki">
+      <div class="block-head">
+        <h2 data-en="Older ones">Vanhemmat</h2>
+        <span class="note arrow" data-en="no quality promised">laatua ei luvata</span>
+      </div>
+      <div class="video-grid" id="videoGrid"></div>
+    </section>
+
+  </main>
+
+  <dialog class="player" id="player">
+    <div class="player-inner">
+      <button type="button" class="player-close" id="playerClose" data-en="Close">Sulje</button>
+      <div class="player-frame" id="playerFrame"></div>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <img src="Icon.png" alt="" width="48" height="48" onerror="this.onerror=null;this.src='https://tinkes.fi/Icon.png'">
+      <span>&copy; <span id="year"></span> Tinkes</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
